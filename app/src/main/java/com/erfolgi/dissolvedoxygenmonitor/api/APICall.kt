@@ -10,9 +10,11 @@ import retrofit2.http.POST
 
 interface APICall {
 //https://api.thingspeak.com/channels/592381/feeds.json?results=1
-    @GET("channels/592381/feeds.json?results=5")
+    @GET("channels/592381/feeds.json?results=10")
     fun requestRead(): Call<ReadObject>
     //channels/592381/fields/1.json?results=1
+    @GET("channels/592381/feeds.json?results=50")
+    fun requestRead2(): Call<ReadObject>
 
     @GET("channels/592381/fields/1.json?results=1")
     fun requestReadField1(): Call<ReadObject>
@@ -27,6 +29,7 @@ interface APICall {
     fun requestWrite(@Field("api_key") key:String?="0RK5LWOWX8F94TNS",
                      @Field("field1") f1:String?,
                      @Field("field2") f2:String?,
-                     @Field("field3") f3:String? ): Call<Write>
+                     @Field("field3") f3:String?,
+                     @Field("field4") f4:String?): Call<Write>
 
 }

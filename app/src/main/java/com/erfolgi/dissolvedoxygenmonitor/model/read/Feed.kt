@@ -19,7 +19,10 @@ data class Feed (
     var field2: String? = null,
     @SerializedName("field3")
     @Expose
-    var field3: String? = null
+    var field3: String? = null,
+    @SerializedName("field4")
+    @Expose
+    var field4: String? = null
 
 )
 

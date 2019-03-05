@@ -61,6 +61,7 @@ class MainPresenter (var mainView: MainView){
             }
             override fun  onFailure(call : Call<ReadObject>, t: Throwable) {
                 Log.e("gedebugcoy",t.toString())
+                getFeed()
             }
         })
     }
@@ -68,10 +69,10 @@ class MainPresenter (var mainView: MainView){
         callFeed.cancel()
     }
 
-    fun setFeed(f1:String,f2:String,f3:String){
+    fun setFeed(f1:String,f2:String,f3:String,f4:String){
         val apiClient = APIClient()
         val apiCall: Call<Write>
-        apiCall = apiClient.service.requestWrite("0RK5LWOWX8F94TNS",f1,f2,f3)
+        apiCall = apiClient.service.requestWrite("0RK5LWOWX8F94TNS",f1,f2,f3,f4)
         apiCall.enqueue(object : Callback<Write> {
             override fun onResponse(call : Call<Write>, response : Response<Write>){
                 Log.d("gedebug",response.body().toString())
@@ -84,7 +85,7 @@ class MainPresenter (var mainView: MainView){
             }
             override fun  onFailure(call : Call<Write>, t: Throwable) {
                 Log.e("gedebugcoy",t.toString())
-                setFeed(f1,f2,f3)
+                setFeed(f1,f2,f3,f4)
                 //mainView.showToast("Error :$t")
             }
         })

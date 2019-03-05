@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Dissolved Oxygen Monitor</string>
+    <string name="fuzzy">Fuzzy</string>
+    <string name="aerator_status">Aerator Status:</string>
+    <string name="date">Date\t:</string>
+    <string name="fuzzy2">Fuzzy\t:</string>
+    <string name="do1">DO\t:</string>
 </resources>
